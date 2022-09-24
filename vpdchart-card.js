@@ -87,7 +87,6 @@ class VpdchartCard extends HTMLElement {
         if (!(crop in this.crops)) {
             throw new Error('You need to define crop as "Cannabis", "Tomatoes", "Leafy greens" or "Cucumber"');
         }
-  
       }
       if (!config.air_rh) {
         throw new Error('You need to define air_rh');
