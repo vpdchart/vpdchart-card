@@ -17,13 +17,15 @@ A VPD chart custom card for Home Assistant Lovelace. The card loads the chart fo
 
 <details>
    <summary>Manual install</summary>
-1. Download the `simple-thermostat.js` file and store it in your `configuration/www/` HASS folder.
-2. Configure Lovelace to load the card:
+1. Download the simple-thermostat.js file and store it in your configuration/www/ HASS folder
+
+2. Add to resources:
+
 ```yaml
-resources:
-  - url: /local/vpdchart-card.js
-    type: module
+url: /local/vpdchart-card.js
+type: module
 ```
+
 </details>
 
 ## Configuration
