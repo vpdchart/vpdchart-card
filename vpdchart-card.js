@@ -54,7 +54,7 @@ class VpdchartCard extends HTMLElement {
             </style>
           <ha-card header="${chartTitle}">
             <div id="root" style="padding-top: 100.00%;">
-                <iframe sandbox="allow-forms allow-modals allow-popups allow-pointer-lock allow-same-origin allow-scripts" allowfullscreen="true" src="https://vpd.dev.innovo.ro/ha.html#C,50,25,23,0"></iframe>
+                <iframe sandbox="allow-forms allow-modals allow-popups allow-pointer-lock allow-same-origin allow-scripts" allowfullscreen="true" src="https://vpdchart.com/ha.html#C,50,25,23,0"></iframe>
               <div>
                 <p>The chart doesn't render, because some sensors are unavailable:</p>
                 <p>${airRhState.attributes.friendly_name}: ${airRhVal}</p>
@@ -72,7 +72,7 @@ class VpdchartCard extends HTMLElement {
         this.iframe.style.display = "none";
         this.div.style.display = "";
       } else {
-        const realLeafTempVal = parseFloat(leafTempVal) + parseFloat(this.config.leaf_temp_offset);
+        const realLeafTempVal = parseFloat(leafTempVal) + (this.config.leaf_temp_offset ? parseFloat(this.config.leaf_temp_offset) : 0);
         this.iframe.src = "https://vpdchart.com/ha.html#" + tempUnit + "," + airRhVal + "," + airTempVal + "," + realLeafTempVal + "," + cropId;
         this.iframe.style.display = "";
         this.div.style.display = "none";
@@ -96,9 +96,6 @@ class VpdchartCard extends HTMLElement {
       }
       if (!config.leaf_temp) {
         throw new Error('You need to define leaf_temp');
-      }
-      if (!config.leaf_temp_offset) {
-        throw new Error('You need to define leaf_temp_offset');
       }
       this.config = config;
     }
