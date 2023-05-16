@@ -49,4 +49,4 @@ leaf_temp_offset: -2
 | air_rh           | string  | **Required** | A humidity sensor entity id                  |
 | air_temp         | string  | **Required** | A temperature sensor entity id               |
 | leaf_temp        | string  | **Required** | A temperature sensor entity id               |
-| leaf_temp_offset | number  | **Required** | An offset applied to the leaf_temp defined sensor. This is degrees C or F. Temperature unit is taken from HASS settings (Settings > General > Unit System) |
+| leaf_temp_offset | number  | **Optional** | An offset applied to the leaf_temp defined sensor. This is degrees C or F. Temperature unit is taken from HASS settings (Settings > General > Unit System) |
